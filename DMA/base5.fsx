@@ -8,3 +8,5 @@ let rec base5 n =
     else
         (base5 (n / 5)) @ [n % 5]
 printfn "%A" (base5 c)
+
+//runtime of base5 is O(log5(n))
