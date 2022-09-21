@@ -1,3 +1,7 @@
+///<summary> This program firstly adds two vectors together then converts the newly created vector to an integer. Then we input the new vector in our canvas which draws it in a window </summary>
+///<params> we input Vektor1 and Vektor2 then output Vektor 3 </params>
+/// <results> Outout added vektor that has been convereted to integer and draw the vector in canvas </results>
+
 #r "nuget:DIKU.Canvas, 1.0"
 type vec = float * float
 let Vektor1 : vec = (5.0,5.0)
@@ -11,7 +15,7 @@ let v3: float * float = addition Vektor1 Vektor2
 
 
 let toInt (v: float * float) =
-    let (x: float, y: float) = v 
+    let (x: float, y: float) = v3
     (int x, int y) 
 printfn "%A" (toInt (Vektor1))
 
