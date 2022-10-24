@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "auMZrgcgoEeRJp6Sp+IN7NKuv8UhbheaA3Wh7/h2yR2ugjxEmDlgRBeH3cBn+FpXnjLoA0JGVklWV8tyfJchpQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mikai\\6g\\6g.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mikai\\.nuget\\packages\\fsharp.core\\6.0.5\\fsharp.core.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,4 @@
+c:\Users\mikai\1. Fs_proj\6g\obj\Debug\net6.0\6g.fsproj.AssemblyReference.cache
+c:\Users\mikai\1. Fs_proj\6g\obj\Debug\net6.0\6g.AssemblyInfoInputs.cache
+c:\Users\mikai\1. Fs_proj\6g\obj\Debug\net6.0\6g.AssemblyInfo.fs
+c:\Users\mikai\1. Fs_proj\6g\obj\Debug\net6.0\6g.fsproj.CoreCompileInputs.cache
