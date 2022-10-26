@@ -3,6 +3,7 @@ type pos = int * int
 type value = Red | Green | Blue | Yellow | Black //piece values
 type piece = value*pos
 type state = piece list
+type color = {r:byte;g:byte;b:byte;a:byte}
 
 let fromValue (v : value) : Canvas.color =
     match v with
