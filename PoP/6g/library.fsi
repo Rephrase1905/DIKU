@@ -3,6 +3,7 @@ type pos = int * int
 type value = Red | Green | Blue | Yellow | Black //piece values
 type piece = value*pos
 type state = piece list
+type color = {r:byte;g:byte;b:byte;a:byte}
 
 val fromValue : v : value -> Canvas.color
 val nextColor : c : value -> value
