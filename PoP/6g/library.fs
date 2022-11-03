@@ -1,4 +1,5 @@
 module library
+open Canvas
 type pos = int * int
 type value = Red | Green | Blue | Yellow | Black //piece values
 type piece = value*pos
@@ -8,11 +9,11 @@ type state = piece list
 
 let fromValue (v : value) : Canvas.color =
     match v with
-    | Red -> { r = 255uy; g = 0uy; b = 0uy; a = 255uy }
-    | Green -> { r = 0uy; g = 255uy; b = 0uy; a = 255uy }
-    | Blue -> { r = 0uy; g = 0uy; b = 255uy; a = 255uy }
-    | Yellow -> { r = 255uy; g = 255uy; b = 0uy; a = 255uy }
-    | Black -> { r = 0uy; g = 0uy; b = 0uy; a = 255uy }
+    | Red -> fromRgb(255,0,0)
+    | Green -> fromRgb(0,255,0)
+    | Blue -> fromRgb(0,0,255)
+    | Yellow -> fromRgb(255,255,0)
+    | Black -> fromRgb(0,0,0)
 
 let nextColor (c : value) : value =
     match c with
@@ -21,20 +22,26 @@ let nextColor (c : value) : value =
     | Blue -> Yellow
     | Yellow -> Black
     | Black -> Black
-
-//return the list of pieces on a column k on board
+//ignore unused values with "_"
 let filter (k: int) (s : state) : state =
-    List.filter (fun (v: value, (x: int, y: int)) -> x = k) s
-// tilt all pieces on the board s to the left ( towards zero on
-// the first coordinate ), e.g. ,
-// > shiftUp [( Blue , (1 , 0)); (Red , (2 , 0)); (Black , (1 ,1))];;
-// val it: state = [( Blue , (0 , 0)); (Red , (1 , 0)); (Black , (0 , 1))]
-let shiftUp (s : state) : state = 
+    s |> List.filter (fun (_, (_, column)) -> k = column) 
+
+let transpose (s : state) : state =
+    s |> List.map (fun (pieceValue: value, (row: int, column: int)) -> (pieceValue, (column, row)))
+
+
+(* 
 
 let flipUD (s : state) : state =
 
-let transpose (s : state) : state =
+let shiftUp (s : state) : state = 
+    //s |> List.map (fun (pieceValue: value, (row: int, column: int)) -> (pieceValue, (row - 1, column)))
+
+let addRandom (c : value) (s : state) : state option = 
 
 let empty (s : state) : pos list =
-
-let addRandom (c : value) (s : state) : state option =
+    let allPositions = [for i in 0..2 do for j in 0..2 do yield (i, j)]
+    allPositions |> List.filter (fun pos -> not (List.contains pos occupiedPositions)) 
+    let occupiedPositions = s |> List.map (fun (_, pos) -> pos) 
+    
+*)
