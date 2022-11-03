@@ -34,6 +34,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DIKU.Canvas": {
+              "target": "Package",
+              "version": "[1.0.1, )",
+              "generatePathProperty": true
+            },
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
