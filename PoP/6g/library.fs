@@ -57,8 +57,8 @@ let shiftUp (s: state): state =
 let flipUD (s: state): state =
     s |> List.map (fun (x,(i,j)) -> (x,(2-i,j)))
 
-let transpose (s: state): state =
-    s |> List.map (fun (x,(i: int,j: int)) -> (x,(j,i)))
+(* let transpose (s: state): state =
+    s |> List.map (fun (x,(i: int,j: int)) -> (x,(j,i))) *)
 
 let empty (s: state): pos list =
     let allPos: pos list = [(0,0);(0,1);(0,2);(1,0);(1,1);(1,2);(2,0);(2,1);(2,2)]
